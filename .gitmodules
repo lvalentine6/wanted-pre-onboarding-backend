@@ -1,4 +1,0 @@
-[submodule "wanted-sub"]
-    path = wanted-sub
-    url = https://github.com/lvalentine6/wanted-sub
-    branch = main
