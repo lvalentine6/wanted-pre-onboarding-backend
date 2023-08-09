@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  was:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile_was
+    working_dir: /was
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+  db:
+    container_name: wanted-pre-db
+    image: mysql:8.0.32
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: lvalentine
+      MYSQL_DATABASE: board
+      MYSQL_USER: lvalentine
+      MYSQL_PASSWORD: lvalentine
+    ports:
+      - "3306:3306"
+
+
+
