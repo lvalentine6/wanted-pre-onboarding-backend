@@ -1,6 +1,6 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://wanted-pre-db:3306/board?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://db:3306/board?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8
     username: lvalentine
     password: lvalentine
