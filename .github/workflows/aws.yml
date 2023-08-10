@@ -47,10 +47,10 @@ jobs:
             }
           }' > package.json
 
-      - name: Semantic Release
+      - name: Semantic Release without NPM
         id: semantic
         run: |
-          VERSION=$(npx semantic-release --no-ci | grep "Published" | awk '{print $2}')
+          VERSION=$(npx semantic-release --no-ci --plugins "@semantic-release/commit-analyzer,@semantic-release/release-notes-generator,@semantic-release/github" | grep "Published" | awk '{print $2}')
           echo "SEMANTIC_VERSION=$VERSION" >> $GITHUB_ENV
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
