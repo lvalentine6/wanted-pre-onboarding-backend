@@ -54,14 +54,14 @@ jobs:
           }' > package.json
           OUTPUT=$(npx semantic-release --no-ci)
           echo "$OUTPUT"
-          VERSION=$(echo "$OUTPUT" | grep "Published" | awk '{print $2}')
+          VERSION=$(echo "$OUTPUT" | grep "Published" | awk '{print $2}' | tr -d '\n')
           if [ ! -z "$VERSION" ]; then
             echo "SEMANTIC_VERSION=$VERSION" >> $GITHUB_ENV
           else
             echo "Error: SEMANTIC_VERSION not extracted" && exit 1
           fi
         env:
-          token: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Print Semantic Version
         run: echo "SEMANTIC_VERSION is set to $SEMANTIC_VERSION"
