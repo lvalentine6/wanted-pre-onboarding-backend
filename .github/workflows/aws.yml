@@ -47,13 +47,17 @@ jobs:
             }
           }' > package.json
 
-      - name: Semantic Release without NPM
+      - name: Configure NPM registry authentication
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+      - name: Semantic Release
         id: semantic
         run: |
-          VERSION=$(npx semantic-release --no-ci --plugins "@semantic-release/commit-analyzer,@semantic-release/release-notes-generator,@semantic-release/github,@semantic-release/npm" --npmPublish=false | grep "Published" | awk '{print $2}')
+          VERSION=$(npx semantic-release --no-ci | grep "Published" | awk '{print $2}')
           echo "SEMANTIC_VERSION=$VERSION" >> $GITHUB_ENV
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Print Semantic Version
         run: echo "SEMANTIC_VERSION is set to $SEMANTIC_VERSION"
