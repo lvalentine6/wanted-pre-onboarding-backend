@@ -96,9 +96,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         run: |
-          cd ${{ github.workspace }}
-          ls -al
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$SEMANTIC_VERSION -f Dockerfile.was .
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$SEMANTIC_VERSION -f Dockerfile_was .
           docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$SEMANTIC_VERSION $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$SEMANTIC_VERSION
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
