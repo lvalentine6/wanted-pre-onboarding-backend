@@ -47,9 +47,6 @@ jobs:
             }
           }' > package.json
 
-      - name: Configure NPM registry authentication
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-
       - name: Semantic Release
         id: semantic
         run: |
@@ -57,7 +54,6 @@ jobs:
           echo "SEMANTIC_VERSION=$VERSION" >> $GITHUB_ENV
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Print Semantic Version
         run: echo "SEMANTIC_VERSION is set to $SEMANTIC_VERSION"
