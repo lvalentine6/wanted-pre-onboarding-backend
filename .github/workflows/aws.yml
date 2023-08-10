@@ -50,7 +50,7 @@ jobs:
 
       - name: Build with Gradle
         run: |
-          cd ${{ github.workspace }}/be
+          cd ${{ github.workspace }}
           chmod +x gradlew
           ./gradlew clean build -x test
 
