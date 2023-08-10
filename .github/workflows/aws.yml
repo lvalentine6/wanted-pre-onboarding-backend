@@ -33,11 +33,27 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Create package.json
+        run: |
+          echo '{
+            "name": "wanted-pre-onboarding-backend",
+            "version": "0.0.0-development",
+            "repository": {
+              "type": "git",
+              "url": "https://github.com/lvalentine6/wanted-pre-onboarding-backend.git"
+            },
+            "release": {
+              "branches": ["main"]
+            }
+          }' > package.json
+
       - name: Semantic Release
         id: semantic
         run: |
           VERSION=$(npx semantic-release --no-ci | grep "Published" | awk '{print $2}')
           echo "SEMANTIC_VERSION=$VERSION" >> $GITHUB_ENV
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Print Semantic Version
         run: echo "SEMANTIC_VERSION is set to $SEMANTIC_VERSION"
