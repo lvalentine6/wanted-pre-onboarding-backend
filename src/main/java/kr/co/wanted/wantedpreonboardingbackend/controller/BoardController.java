@@ -10,8 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 public class BoardController {
 
 	@GetMapping("/test")
-	public String hello() {
+	public String test() {
 		log.info("test 호출");
-		return "hello!";
+		return "test success!";
 	}
 }
