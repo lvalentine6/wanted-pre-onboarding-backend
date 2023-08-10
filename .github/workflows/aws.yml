@@ -52,7 +52,9 @@ jobs:
               ]
             }
           }' > package.json
-          VERSION=$(npx semantic-release --no-ci | grep "Published" | awk '{print $2}')
+          OUTPUT=$(npx semantic-release --no-ci)
+          echo "$OUTPUT"
+          VERSION=$(echo "$OUTPUT" | grep "Published" | awk '{print $2}')
           if [ ! -z "$VERSION" ]; then
             echo "SEMANTIC_VERSION=$VERSION" >> $GITHUB_ENV
           else
