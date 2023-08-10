@@ -46,7 +46,7 @@ jobs:
 
       - name: Overwrite application.yml with submodule version
         run: |
-          cp wanted-sub/application.yml wanted-pre-onboarding-backend/src/main/resources/application.yml
+          cp wanted-sub/application.yml src/main/resources/application.yml
 
       - name: Build with Gradle
         run: |
