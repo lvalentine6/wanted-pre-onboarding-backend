@@ -11,7 +11,6 @@ public class BoardController {
 
 	@GetMapping("/test")
 	public String test() {
-		log.info("test 호출");
 		return "test success!";
 	}
 }
