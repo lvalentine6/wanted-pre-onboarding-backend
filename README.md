@@ -3,18 +3,22 @@
 ## 지원자 정보
 
 - **성명**: 이승로
-- **과제 마감일**: 2023.08.11
+- **과제 제출일**: 2023.08.16
 
 ## 애플리케이션 실행 방법
 
-1. [설치 및 설정 방법을 순차적으로 입력 예: `git clone` 레포지토리 주소]
-2. ...
-3. ...
+### 로컬 환경
+1. [git 주소](https://github.com/lvalentine6/wanted-pre-onboarding-backend.git)를 로컬에 clone
+2. docker-compose 설치 및 실행
+3. 터미널 실행 후 프로젝트 최상단 디렉터리에서 ./docker-compose-up.sh 실행
+4. localhost:8080/ 접속
+5. API 명세서를 참고하여 [Postman](https://www.postman.com/) 과 같은 툴로 api 테스트 진행
+
+### 배포 환경
+1. [배포 링크](http://43.202.12.122:8080) 접속
+2. API 명세서를 참고하여 [Postman](https://www.postman.com/) 과 같은 툴로 api 테스트 진행
 
 ## 인프라 구조
-
-## 배포 주소
-[링크](http://43.202.12.122:8080)
 
 ## 데이터베이스 테이블 구조
 

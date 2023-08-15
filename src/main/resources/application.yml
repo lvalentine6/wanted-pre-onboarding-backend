@@ -1,6 +1,20 @@
 spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://db:3306/board?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8
     username: lvalentine
     password: lvalentine
+
+  sql:
+    init:
+      schema-locations: classpath:init/02-schema.sql
+      data-locations: classpath:init/03-data.sql
+      mode: always
+
+logging:
+  level:
+    root: info

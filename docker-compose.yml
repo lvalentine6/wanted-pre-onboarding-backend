@@ -1,17 +1,6 @@
 version: "3"
 
 services:
-  was:
-    restart: always
-    build:
-      context: .
-      dockerfile: Dockerfile_was
-    working_dir: /was
-    ports:
-      - "8080:8080"
-    depends_on:
-      - db
-
   db:
     container_name: wanted-pre-db
     image: mysql:8.0.32
@@ -23,6 +12,21 @@ services:
       MYSQL_PASSWORD: lvalentine
     ports:
       - "3306:3306"
+    volumes:
+      - ./src/main/resources/init/01-my.cnf:/etc/mysql/conf.d/01-my.cnf
+      - ./src/main/resources/init/02-schema.sql:/docker-entrypoint-initdb.d/02-schema.sql
+      - ./src/main/resources/init/03-data.sql:/docker-entrypoint-initdb.d/03-data.sql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
 
-
-
+  was:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile_was
+    working_dir: /was
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
