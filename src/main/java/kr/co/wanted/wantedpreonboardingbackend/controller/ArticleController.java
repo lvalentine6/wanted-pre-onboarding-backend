@@ -30,8 +30,12 @@ public class ArticleController {
 	}
 
 	@PostMapping("/article")
-	public ResponseDto<?> creatArticle(ArticleRequestDto articleRequestDto) {
-		articleService.registerArticle(articleRequestDto);
+	public ResponseDto<?> creatArticle(ArticleRequestDto articleRequestDto, HttpServletRequest httpServletRequest) {
+		try {
+			articleService.registerArticle(articleRequestDto, httpServletRequest);
+		} catch (Exception e) {
+			return ResponseDto.of(ResponseStatus.LoginInfo, null);
+		}
 		return ResponseDto.of(ResponseStatus.SUCCESS, null);
 	}
 

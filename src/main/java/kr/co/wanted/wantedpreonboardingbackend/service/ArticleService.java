@@ -36,9 +36,10 @@ public class ArticleService {
 		return ArticleResponseListDto.ofPage(articlesPage);
 	}
 
-	public void registerArticle(ArticleRequestDto articleRequestDto) {
-		Member member1 = memberRepository.findById(1L).orElseThrow();
-		Article article = new Article(member1, articleRequestDto.getTitle(), articleRequestDto.getContents(),
+	public void registerArticle(ArticleRequestDto articleRequestDto, HttpServletRequest request) {
+		String email = jwtUtil.getMemberEmailFromToken(request);
+		Member member = memberRepository.findByEmail(email).orElseThrow();
+		Article article = new Article(member, articleRequestDto.getTitle(), articleRequestDto.getContents(),
 			LocalDateTime.now());
 		articleRepository.save(article);
 	}
