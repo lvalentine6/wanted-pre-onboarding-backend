@@ -13,7 +13,7 @@
 2. docker-compose 설치 및 실행
 3. 터미널 실행 후 프로젝트 최상단 디렉터리에서 ./docker-compose-up.sh 실행
 4. localhost:8080/ 접속
-5. API 명세서를 참고하여 [Postman](https://www.postman.com/) 과 같은 툴로 api 테스트 진행
+5. API 명세서를 참고하여 [Postman](https://www.postman.com/) 과 같은 툴로 api 테스트 진행 
 
 ### 배포 환경
 
