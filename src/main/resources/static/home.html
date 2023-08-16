@@ -37,8 +37,79 @@
     <tr>
         <td>/register</td>
         <td>POST</td>
-        <td>이메일: ...<br>비밀번호: ...</td>
-        <td>...</td>
+        <td>
+            이메일: user@email.com<br>
+            비밀번호: password123
+        </td>
+        <td>
+            code: 200<br>
+            message: "The request has been processed successfully"<br>
+            data: { ... }<br>
+            success: true
+        </td>
+    </tr>
+    <tr>
+        <td>/login</td>
+        <td>POST</td>
+        <td>
+            이메일: user@email.com<br>
+            비밀번호: password123
+        </td>
+        <td>
+            code: 200<br>
+            token: "access_token_here"
+        </td>
+    </tr>
+    <tr>
+        <td>/articles</td>
+        <td>GET</td>
+        <td></td>
+        <td>
+            code: 200<br>
+            data: [ { "articleId": 1, "title": "Article1", "contents": "Contents1" }, ... ]
+        </td>
+    </tr>
+    <tr>
+        <td>/article</td>
+        <td>POST</td>
+        <td>
+            제목: "New Article"<br>
+            내용: "Article contents here"
+        </td>
+        <td>
+            code: 201<br>
+            message: "Article successfully created"
+        </td>
+    </tr>
+    <tr>
+        <td>/article/{articleId}</td>
+        <td>GET</td>
+        <td></td>
+        <td>
+            code: 200<br>
+            data: { "articleId": 1, "title": "Article1", "contents": "Contents1" }
+        </td>
+    </tr>
+    <tr>
+        <td>/article/{articleId}</td>
+        <td>PUT</td>
+        <td>
+            제목: "Updated Article"<br>
+            내용: "Updated contents here"
+        </td>
+        <td>
+            code: 200<br>
+            message: "Article successfully updated"
+        </td>
+    </tr>
+    <tr>
+        <td>/article/{articleId}</td>
+        <td>DELETE</td>
+        <td></td>
+        <td>
+            code: 200<br>
+            message: "Article successfully deleted"
+        </td>
     </tr>
     </tbody>
 </table>

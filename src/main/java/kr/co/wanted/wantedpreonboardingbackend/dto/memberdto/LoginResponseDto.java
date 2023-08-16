@@ -5,7 +5,6 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class MemberRequestDto {
-	private String email;
-	private String password;
+public class LoginResponseDto {
+	private String BearerToken;
 }
