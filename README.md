@@ -21,25 +21,14 @@
 2. API 명세서를 참고하여 [Postman](https://www.postman.com/) 과 같은 툴로 api 테스트 진행
 
 ## 인프라 구조
+![wanted-infra](https://github.com/lvalentine6/wanted-pre-onboarding-backend/assets/77956808/64a899da-e786-495d-8ae0-d63249a79599)
 
 ## 데이터베이스 테이블 구조
-
-- **테이블1**:
-    - 컬럼1: 설명
-    - 컬럼2: 설명
-    - ...
-
-- **테이블2**:
-  ...
+![스크린샷 2023-08-16 234919](https://github.com/lvalentine6/wanted-pre-onboarding-backend/assets/77956808/eb137f52-de93-4e03-8d64-02a640f6bd28)
 
 ## 데모 영상
 
 [여기](링크를 입력해주세요)에서 데모 영상을 확인할 수 있습니다.
-
-## 구현 방법 및 이유
-
-- **과제 1**: [과제 1에 대한 구현 방법 및 이유를 설명]
-- ...
 
 ## API 목록
 
