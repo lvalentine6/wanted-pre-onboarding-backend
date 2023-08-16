@@ -13,7 +13,9 @@
 2. docker 설치 및 실행
 3. mac인 경우 프로젝트 최상단 경로 터미널에서 ```chmod +x docker-compose-up.sh``` 실행
 4. 터미널에서 ```git config --global core.autocrlf true``` 실행
-5. /docker-compose-up.sh 실행
+5. /docker-compose-up.sh 실행     
+    (만약 was container가 exited with code 126로 종료된다면 docker-compose-up.sh 파일로 들어가 하단 줄바꿈 문자를 LF으로 변경 후    
+   ```docker-compose down -v``` 명령어로 애플리케이션 종료 후 다시 실행)
 6. localhost:8080/ 접속
 7. [Postman document](https://documenter.getpostman.com/view/27692641/2s9Y5R1RPN)를 참조하여 api 테스트 진행
 8. 터미널에서 ```docker-compose down -v``` 명령어로 애플리케이션 종료 
