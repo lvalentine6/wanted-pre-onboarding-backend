@@ -9,21 +9,25 @@
 
 ### 로컬 환경
 
-1. [git 주소](https://github.com/lvalentine6/wanted-pre-onboarding-backend.git)를 로컬에 clone
+1. https://github.com/lvalentine6/wanted-pre-onboarding-backend.git를 로컬에 clone
 2. docker-compose 설치 및 실행
-3. 터미널 실행 후 프로젝트 최상단 디렉터리에서 ./docker-compose-up.sh 실행
-4. localhost:8080/ 접속
-5. API 명세서를 참고하여 [Postman](https://www.postman.com/) 과 같은 툴로 api 테스트 진행 
+3. 프로젝트 최상단 경로에서 mac인 경우 터미널에서 ```chmod +x docker-compose-up.sh``` windows인 경우 powershell에서 ```Set-ExecutionPolicy RemoteSigned -Scope CurrentUser``` 
+4. ./docker-compose-up.sh 실행
+5. localhost:8080/ 접속
+6. [Postman document](https://documenter.getpostman.com/view/27692641/2s9Y5R1RPN)를 참조하여 api 테스트 진행
+7. 터미널에서 ```docker-compose down -v``` 명령어로 애플리케이션 종료 
 
 ### 배포 환경
 
 1. [배포 링크](http://43.202.12.122:8080) 접속
-2. API 명세서를 참고하여 [Postman](https://www.postman.com/) 과 같은 툴로 api 테스트 진행
+2. [Postman document](https://documenter.getpostman.com/view/27692641/2s9Y5R1RPN)를 참조하여 api 테스트 진행
 
 ## 인프라 구조
+
 ![wanted-infra](https://github.com/lvalentine6/wanted-pre-onboarding-backend/assets/77956808/64a899da-e786-495d-8ae0-d63249a79599)
 
 ## 데이터베이스 테이블 구조
+
 ![스크린샷 2023-08-16 234919](https://github.com/lvalentine6/wanted-pre-onboarding-backend/assets/77956808/eb137f52-de93-4e03-8d64-02a640f6bd28)
 
 ## 데모 영상
