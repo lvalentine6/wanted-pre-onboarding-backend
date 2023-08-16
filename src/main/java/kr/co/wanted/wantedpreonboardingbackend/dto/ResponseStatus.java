@@ -10,6 +10,7 @@ public enum ResponseStatus {
 	SUCCESS(true, 200, "The request has been processed successfully"),
 	BAD_REQUEST(false, 400, "This request is not accepted by the server"),
 	NOT_FOUND(false, 404, "The requested resource could not be found"),
+	LoginInfo(false, 400, "Please login first"),
 	INVALID_EMAIL(false, 400, "This email is out of format. please try again"),
 	INVALID_PASSWORD(false, 400, "This password is out of format. please try again"),
 	INVALID_LOGIN(false, 400, "Email or password are invalid. please try again"),
