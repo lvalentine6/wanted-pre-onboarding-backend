@@ -20,10 +20,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class JwtUtil {
 
+	private static final long EXPIRATION_TIME = 86400000L;
 	@Value("${security.jwt.token.secret-key}")
 	private String secretKey;
-
-	private static final long EXPIRATION_TIME = 86400000L;
 
 	@PostConstruct
 	protected void init() {

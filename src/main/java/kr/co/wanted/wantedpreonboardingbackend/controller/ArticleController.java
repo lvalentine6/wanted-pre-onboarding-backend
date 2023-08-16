@@ -1,7 +1,5 @@
 package kr.co.wanted.wantedpreonboardingbackend.controller;
 
-import java.net.http.HttpRequest;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -43,7 +41,8 @@ public class ArticleController {
 	}
 
 	@PutMapping("/article/{articleId}")
-	public ResponseDto<?> updateArticle(@PathVariable String articleId, ArticleRequestDto articleRequestDto, HttpServletRequest httpServletRequest) {
+	public ResponseDto<?> updateArticle(@PathVariable String articleId, ArticleRequestDto articleRequestDto,
+		HttpServletRequest httpServletRequest) {
 		try {
 			articleService.updateArticle(Long.parseLong(articleId), articleRequestDto, httpServletRequest);
 		} catch (IllegalArgumentException illegalArgumentException) {

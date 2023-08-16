@@ -1,8 +1,6 @@
 package kr.co.wanted.wantedpreonboardingbackend.service;
 
 import java.util.Arrays;
-import java.util.IllegalFormatException;
-import java.util.IllegalFormatFlagsException;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,18 +42,18 @@ public class MemberService {
 	}
 
 	public LoginResponseDto login(MemberRequestDto memberRequestDto) {
-		if(isValidEmail(memberRequestDto.getEmail())) {
+		if (isValidEmail(memberRequestDto.getEmail())) {
 			throw new IllegalStateException(ResponseStatus.INVALID_EMAIL.toString());
 		}
 
-		if(isValidPassword(memberRequestDto.getPassword())) {
+		if (isValidPassword(memberRequestDto.getPassword())) {
 			throw new IllegalStateException(ResponseStatus.INVALID_PASSWORD.toString());
 		}
 
 		String password = memberRequestDto.getPassword();
 		String hashPassword = memberRepository.findByEmail(memberRequestDto.getEmail()).get().getPassword();
 
-		if(!BCrypt.checkpw(password, hashPassword)) {
+		if (!BCrypt.checkpw(password, hashPassword)) {
 			throw new IllegalArgumentException();
 		}
 
