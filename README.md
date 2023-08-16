@@ -9,7 +9,7 @@
 
 ### 로컬 환경
 
-1. ```https://github.com/lvalentine6/wanted-pre-onboarding-backend.git``` 를 로컬에 clone
+1. ```https://github.com/lvalentine6/wanted-pre-onboarding-backend.git``` 를 로컬에 clone 
 2. docker-compose 설치 및 실행
 3. 프로젝트 최상단 경로에서 mac인 경우 터미널에서 ```chmod +x docker-compose-up.sh``` windows인 경우 powershell에서 ```Set-ExecutionPolicy RemoteSigned -Scope CurrentUser``` 
 4. ./docker-compose-up.sh 실행
