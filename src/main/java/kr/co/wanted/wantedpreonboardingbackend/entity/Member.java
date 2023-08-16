@@ -26,6 +26,11 @@ public class Member {
 	@Column(name = "password")
 	private String password;
 
+	public Member(String email, String password) {
+		this.email = email;
+		this.password = password;
+	}
+
 	@Override
 	public String toString() {
 		return "Member{" +
