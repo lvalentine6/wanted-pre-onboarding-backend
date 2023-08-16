@@ -1,5 +1,9 @@
 package kr.co.wanted.wantedpreonboardingbackend.controller;
 
+import java.net.http.HttpRequest;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,14 +43,22 @@ public class ArticleController {
 	}
 
 	@PutMapping("/article/{articleId}")
-	public ResponseDto<?> updateArticle(@PathVariable String articleId, ArticleRequestDto articleRequestDto) {
-		articleService.updateArticle(Long.parseLong(articleId), articleRequestDto);
+	public ResponseDto<?> updateArticle(@PathVariable String articleId, ArticleRequestDto articleRequestDto, HttpServletRequest httpServletRequest) {
+		try {
+			articleService.updateArticle(Long.parseLong(articleId), articleRequestDto, httpServletRequest);
+		} catch (IllegalArgumentException illegalArgumentException) {
+			return ResponseDto.of(ResponseStatus.ArticleAuthUpdate, null);
+		}
 		return ResponseDto.of(ResponseStatus.SUCCESS, null);
 	}
 
 	@DeleteMapping("/article/{articleId}")
-	public ResponseDto<?> deleteArticle(@PathVariable String articleId) {
-		articleService.deleteArticle(Long.parseLong(articleId));
+	public ResponseDto<?> deleteArticle(@PathVariable String articleId, HttpServletRequest httpServletRequest) {
+		try {
+			articleService.deleteArticle(Long.parseLong(articleId), httpServletRequest);
+		} catch (IllegalArgumentException illegalArgumentException) {
+			return ResponseDto.of(ResponseStatus.ArticleAuthDelete, null);
+		}
 		return ResponseDto.of(ResponseStatus.SUCCESS, null);
 	}
 }
