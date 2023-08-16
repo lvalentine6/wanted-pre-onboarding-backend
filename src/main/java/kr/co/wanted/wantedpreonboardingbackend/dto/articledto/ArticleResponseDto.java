@@ -15,7 +15,6 @@ public class ArticleResponseDto {
 	private String title;
 	private String contents;
 
-	// 정적 팩터리 메서드
 	public static ArticleResponseDto from(Article article) {
 		return new ArticleResponseDto(
 			article.getArticleId(),
