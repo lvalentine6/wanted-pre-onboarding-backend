@@ -10,12 +10,13 @@
 ### 로컬 환경
 
 1. ```https://github.com/lvalentine6/wanted-pre-onboarding-backend.git``` 를 로컬에 clone 
-2. docker-compose 설치 및 실행
-3. 프로젝트 최상단 경로에서 mac인 경우 터미널에서 ```chmod +x docker-compose-up.sh``` windows인 경우 powershell에서 ```Set-ExecutionPolicy RemoteSigned -Scope CurrentUser``` 
-4. ./docker-compose-up.sh 실행
-5. localhost:8080/ 접속
-6. [Postman document](https://documenter.getpostman.com/view/27692641/2s9Y5R1RPN)를 참조하여 api 테스트 진행
-7. 터미널에서 ```docker-compose down -v``` 명령어로 애플리케이션 종료 
+2. docker 설치 및 실행
+3. mac인 경우 프로젝트 최상단 경로 터미널에서 ```chmod +x docker-compose-up.sh``` 실행
+4. 터미널에서 ```git config --global core.autocrlf true``` 실행
+5. /docker-compose-up.sh 실행
+6. localhost:8080/ 접속
+7. [Postman document](https://documenter.getpostman.com/view/27692641/2s9Y5R1RPN)를 참조하여 api 테스트 진행
+8. 터미널에서 ```docker-compose down -v``` 명령어로 애플리케이션 종료 
 
 ### 배포 환경
 
