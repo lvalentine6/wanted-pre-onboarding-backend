@@ -9,6 +9,11 @@ spring:
     username: lvalentine
     password: lvalentine
 
+security:
+  jwt:
+    token:
+      secret-key: testSecretKey
+
 logging:
   level:
     root: info
