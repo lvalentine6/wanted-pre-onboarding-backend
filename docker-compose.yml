@@ -10,12 +10,12 @@ services:
       MYSQL_DATABASE: board
       MYSQL_USER: lvalentine
       MYSQL_PASSWORD: lvalentine
+      TZ: Asia/Seoul
     ports:
       - "3306:3306"
     volumes:
-      - ./src/main/resources/init/01-my.cnf:/etc/mysql/conf.d/01-my.cnf
-      - ./src/main/resources/init/02-schema.sql:/docker-entrypoint-initdb.d/02-schema.sql
-      - ./src/main/resources/init/03-data.sql:/docker-entrypoint-initdb.d/03-data.sql
+      - ./src/main/resources/init/01-schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ./src/main/resources/init/02-data.sql:/docker-entrypoint-initdb.d/02-data.sql
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
