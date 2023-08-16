@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>원티드 프리온보딩 백엔드 인턴십 제출 과제</title>
+    <style>
+        .customTable {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .customTable, .customTable th, .customTable td {
+            border: 1px solid black;
+        }
+
+        .customTable th, .customTable td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
 <h1>원티드 프리온보딩 백엔드 인턴십 제출 과제 - 이승로</h1>
 
-<h3> API 목록</h3>
-<style>
-    .customTable {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    .customTable, .customTable th, .customTable td {
-        border: 1px solid black;
-    }
-
-    .customTable th, .customTable td {
-        padding: 10px;
-        text-align: left;
-    }
-</style>
+<h3>API 목록</h3>
 
 <table class="customTable">
     <thead>
@@ -35,11 +35,11 @@
     </thead>
     <tbody>
     <tr>
-        <td>/register</td>
+        <td>/join</td>
         <td>POST</td>
         <td>
-            이메일: user@email.com<br>
-            비밀번호: password123
+            email: user@email.com<br>
+            password: password123
         </td>
         <td>
             code: 200<br>
@@ -52,33 +52,39 @@
         <td>/login</td>
         <td>POST</td>
         <td>
-            이메일: user@email.com<br>
-            비밀번호: password123
+            email: user@email.com<br>
+            password: password123
         </td>
         <td>
             code: 200<br>
-            token: "access_token_here"
+            message: "The request has been processed successfully"<br>
+            data: { ... <br>
+            bearerToken: "..."}<br>
+            success: true
         </td>
     </tr>
     <tr>
-        <td>/articles</td>
+        <td>/articles?page=0</td>
         <td>GET</td>
         <td></td>
         <td>
             code: 200<br>
+            message: "The request has been processed successfully"<br>
             data: [ { "articleId": 1, "title": "Article1", "contents": "Contents1" }, ... ]
+            success: true
         </td>
     </tr>
     <tr>
         <td>/article</td>
         <td>POST</td>
         <td>
-            제목: "New Article"<br>
-            내용: "Article contents here"
+            title: "New Article"<br>
+            contents: "Article contents here"
         </td>
         <td>
-            code: 201<br>
-            message: "Article successfully created"
+            code: 200<br>
+            message: "The request has been processed successfully"<br>
+            success: true
         </td>
     </tr>
     <tr>
@@ -87,28 +93,42 @@
         <td></td>
         <td>
             code: 200<br>
+            message: "The request has been processed successfully"<br>
             data: { "articleId": 1, "title": "Article1", "contents": "Contents1" }
+            success: true
         </td>
     </tr>
     <tr>
         <td>/article/{articleId}</td>
         <td>PUT</td>
         <td>
-            제목: "Updated Article"<br>
-            내용: "Updated contents here"
+            HttpHeader {<br>
+            bearerToken: "..."<br>
+            }<br><br>
+
+            HttpBody { <br>
+            title: "Updated Article"<br>
+            contents: "Updated contents here"<br>
+            }
         </td>
         <td>
             code: 200<br>
-            message: "Article successfully updated"
+            message: "The request has been processed successfully"<br>
+            success: true
         </td>
     </tr>
     <tr>
         <td>/article/{articleId}</td>
         <td>DELETE</td>
-        <td></td>
+        <td>
+            HttpHeader {<br>
+            bearerToken: "..."<br>
+            }<br><br>
+        </td>
         <td>
             code: 200<br>
-            message: "Article successfully deleted"
+            message: "The request has been processed successfully"<br>
+            success: true
         </td>
     </tr>
     </tbody>
