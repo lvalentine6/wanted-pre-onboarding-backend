@@ -9,12 +9,6 @@ spring:
     username: lvalentine
     password: lvalentine
 
-  sql:
-    init:
-      schema-locations: classpath:init/01-schema.sql
-      data-locations: classpath:init/02-data.sql
-      mode: always
-
 logging:
   level:
     root: info
