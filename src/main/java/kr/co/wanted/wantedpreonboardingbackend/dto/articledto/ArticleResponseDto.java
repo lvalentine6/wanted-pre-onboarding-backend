@@ -1,6 +1,7 @@
 package kr.co.wanted.wantedpreonboardingbackend.dto.articledto;
 
 import java.time.LocalDateTime;
+
 import kr.co.wanted.wantedpreonboardingbackend.entity.Article;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

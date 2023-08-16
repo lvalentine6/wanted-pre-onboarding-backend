@@ -1,13 +1,11 @@
 package kr.co.wanted.wantedpreonboardingbackend.service;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import kr.co.wanted.wantedpreonboardingbackend.dto.articledto.ArticleRequestDto;
@@ -25,16 +23,15 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ArticleService {
 
+	private static final int PAGE_SIZE = 10;
 	private final ArticleRepository articleRepository;
 	private final MemberRepository memberRepository;
-	private static final int PAGE_SIZE = 10;
 
 	public ArticleResponseListDto getArticleList(int page) {
 		PageRequest pageRequest = PageRequest.of(page, PAGE_SIZE);
 		Page<Article> articlesPage = articleRepository.findAll(pageRequest);
 		return ArticleResponseListDto.ofPage(articlesPage);
 	}
-
 
 	public void registerArticle(ArticleRequestDto articleRequestDto) {
 		Member member1 = memberRepository.findById(1L).orElseThrow();
