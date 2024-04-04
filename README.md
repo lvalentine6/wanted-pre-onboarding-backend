@@ -25,10 +25,10 @@
 
 ![스크린샷 2023-08-16 234919](https://github.com/lvalentine6/wanted-pre-onboarding-backend/assets/77956808/eb137f52-de93-4e03-8d64-02a640f6bd28)
 
-## 데모 영상
+<!-- ## 데모 영상
 
 [여기](https://youtu.be/_Qfbih-SZm8)에서 데모 영상을 확인할 수 있습니다.
-
+-->
 ## API 목록
 
 | Endpoint               | Method | Request                                                                                                                          | Response                                                                                                                                                                |
